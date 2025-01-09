@@ -12,12 +12,12 @@ Resource ResourceManager::loadTexture(std::string path)
 		res.status = OK;
 		res.id = path;
 
-		Logger::Success("Cache hit with texture " + path);
+		Logger::success("Cache hit with texture " + path);
 
 		return res;
 	}
 
-	Logger::Print("Cache miss with texture " + path);
+	Logger::print("Cache miss with texture " + path);
 
 	sf::Texture* texture = new sf::Texture();
 	const bool status = texture->loadFromFile(path);
@@ -28,12 +28,12 @@ Resource ResourceManager::loadTexture(std::string path)
 
 		textures.insert({ path, texture });
 
-		Logger::Success("Loaded texture " + path);
+		Logger::success("Loaded texture " + path);
 
 		return res;
 	}
 	else {
-		Logger::Error("Could not load texture " + path);
+		Logger::error("Could not load texture " + path);
 		return res;
 	}
 	

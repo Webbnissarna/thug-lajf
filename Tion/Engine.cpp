@@ -9,6 +9,9 @@
 
 #include "Locator.h"
 
+#include <iostream>
+#include <cstdarg>
+
 // Temporary object factory
 void createWorker(unsigned int offset, ObjectManager* objMgr, ResourceManager* resMgr) {
 	Animation* animWorkerFrontGatherAbove = new Animation();
@@ -32,7 +35,8 @@ void createWorker(unsigned int offset, ObjectManager* objMgr, ResourceManager* r
 
 bool Engine::setup() {
 	auto modes = sf::VideoMode::getFullscreenModes();
-	window = new sf::RenderWindow(modes.at(1), "OTUA", sf::Style::Fullscreen);
+	//window = new sf::RenderWindow(modes.at(1), "OTUA", sf::Style::Fullscreen);
+	window = new sf::RenderWindow(modes.at(4), "OTUA");
 	renderer = new Renderer();
 	objMgr = new ObjectService();
 	resMgr = new ResourceManager();

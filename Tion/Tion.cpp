@@ -5,16 +5,16 @@
 int main() {
 	Engine engine = Engine();
 	if (!engine.setup()) {
-		Logger::Error("Something went shit\n");
+		Logger::error("Something went shit\n");
 		return -1;
 	}
 	
 	if (!engine.run()) {
-		Logger::Error("Something went shit");
+		Logger::error("Something went shit");
 	}
 
 	engine.cleanup();
-	Logger::Success("Exited gracefully");
+	Logger::success("Exited gracefully");
 	
 	return 0;
 }
